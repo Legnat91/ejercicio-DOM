@@ -23,6 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
   formulario.addEventListener('submit', (e) => {
 
     e.preventDefault();
+    
     const accion = e.submitter.value;
 
     if (accion === 'preview') {

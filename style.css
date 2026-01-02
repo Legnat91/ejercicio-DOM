@@ -175,3 +175,11 @@ button {
 .btn-previsualizar:hover {
   background-color: #1312A8;
 }
+
+@media (max-width:767px) {
+  .estilo-form {
+    padding: 0;
+    padding-bottom: 12px;
+    
+ }
+}
