@@ -21,20 +21,31 @@ document.addEventListener('DOMContentLoaded', () => {
 
   }
 
-  btnpreview.addEventListener('click', (e) => {
+  formulario.addEventListener('submit', (e) => {
+
     e.preventDefault();
-    mensajeTexto();
-    preview.innerHTML = `<div>
+    const accion = e.submitter.value;
+
+    if (accion === 'preview') {
+      mensajeTexto();
+      preview.innerHTML = `<div>
     <p><strong>Nombre:</strong> ${datosMensaje.nombre}</p> 
     <p><strong>E-mail:</strong> ${datosMensaje.email}</p> 
     <p><strong>Mensaje:</strong> </p>
     <p class="mensaje-previo">${datosMensaje.mensaje}</p>
     </div>
     <div class="botones">
-    <button class="btn-enviar" type="submit">Enviar</button>
+    <button class="btn-enviar" type="submit" name="accion" value="enviar">Enviar</button>
     </div>
     `;
 
+
+    }
+
+
+
+
+ 
   });
 
   formulario.addEventListener('submit', (e) => {
