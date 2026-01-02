@@ -5,7 +5,6 @@ document.addEventListener('DOMContentLoaded', () => {
   const email = document.getElementById('email');
   const mensaje = document.getElementById('mensaje');
   const preview = document.getElementById('preview');
-  const btnpreview = document.getElementById('btnpreview');
 
   let datosMensaje = {};
 
@@ -39,24 +38,18 @@ document.addEventListener('DOMContentLoaded', () => {
     </div>
     `;
 
-
     }
 
 
+    if (accion === 'enviar') {
+      localStorage.setItem('mensajeGuardado', JSON.stringify(datosMensaje));
+      alert('Mensaje enviado y guardado');
+      formulario.reset();
+      preview.innerHTML = ``;
+      preview.classList.remove('vista-previa');
+    }
 
-
- 
   });
 
-  formulario.addEventListener('submit', (e) => {
-    e.preventDefault();
-
-    localStorage.setItem('mensajeGuardado', JSON.stringify(datosMensaje));
-    alert('Mensaje enviado y guardado');
-    formulario.reset();
-    preview.innerHTML = ``;
-    preview.classList.remove('vista-previa');
-
-  })
-
+  
 });
